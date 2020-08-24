@@ -9,9 +9,8 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
-@Command(name = "parse", mixinStandardHelpOptions = true, description = "Does something useful.", version = "1.0")
-public class Parse implements Callable<Integer> {
-
+@Command(name = "RetImageClass", mixinStandardHelpOptions = true, description = "Returns ImagePlus object", version = "1.0")
+public class RetImagePlus implements Callable<Integer> {
 	@Option(names = "-r", description = "The r option")
 	String rValue;
 	@Option(names = "-S", description = "The S option")
@@ -34,6 +33,7 @@ public class Parse implements Callable<Integer> {
 	}
 
 	public static void main(String... args) {
-		System.exit(new CommandLine(new Parse()).execute(args));
+		System.exit(new CommandLine(new RetImagePlus()).execute(args));
 	}
+
 }
